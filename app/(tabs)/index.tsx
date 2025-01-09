@@ -1,4 +1,5 @@
 import { Image, StyleSheet, Platform } from 'react-native';
+import FormBuilderUi from '@telus/form-builder-ui';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -19,7 +20,25 @@ export default function HomeScreen() {
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
+      <ThemedView>
+        <ThemedText>test section (modified)</ThemedText>
+        <FormBuilderUi
+          locale={'en-CA'}
+          entryID={'1ER6Q2IpC90ONLrt0UPSgA'}
+          spaceID={'fltupc9ltp8m'}
+          environment={'sandbox'}
+          usePreviewAPI={true}
+          bypassCache={true}
+          onSubmit={() => {console.log('submitted')}}
+          isProduction={false}
+          hasCustomPostSubmitMessage={false}
+          hasUnsuccessfulPostSubmitMessage={false}
+          accessConfig={{}}
+          preFillValues={{ }}
+          theme={'allium'}
+        />
+      </ThemedView>
+      {/* <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
@@ -33,7 +52,7 @@ export default function HomeScreen() {
           </ThemedText>{' '}
           to open developer tools.
         </ThemedText>
-      </ThemedView>
+      </ThemedView> */}
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 2: Explore</ThemedText>
         <ThemedText>
